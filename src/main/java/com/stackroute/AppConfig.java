@@ -27,12 +27,5 @@ public class AppConfig {
         return new Actor("Utkarsh", "M", 25);
     }
 
-    @Bean({"movie1","movie2"})
-    @Scope("prototype")
-    public Movie makeMovieObject()
-    {
-        Movie movie =new Movie(actor());
-        return movie;
-    }
 
 }

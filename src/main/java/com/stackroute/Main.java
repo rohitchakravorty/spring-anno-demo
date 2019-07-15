@@ -8,11 +8,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main  {
     public static void main(String[] args)  {
 
-        ApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
-        Movie mv=context.getBean("movie1", Movie.class);
+        AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
+        context.scan("com.stackroute");
+        Movie mv=context.getBean("movie", Movie.class);
         mv.printAboutMovieActor();
-        Movie mv1=context.getBean("movie2",Movie.class);
-        System.out.println(mv==mv1);
+        Movie mv1=context.getBean("movie",Movie.class);
+       
     }
 
 }
