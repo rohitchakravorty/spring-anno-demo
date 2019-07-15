@@ -1,8 +1,8 @@
 package com.stackroute;
 
-import com.stackroute.domain.Actor;
+import com.stackroute.domain.*;
 import com.stackroute.domain.BeanLifeCycleDemoBean;
-import com.stackroute.domain.Movie;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -14,7 +14,7 @@ public class AppConfig {
     @Bean
     public Actor actor()
     {
-        return new Actor("Rohit","M",42);
+        return new Actor("Rohit","M",22s);
     }
 
     @Bean
@@ -34,6 +34,12 @@ public class AppConfig {
         BeanLifeCycleDemoBean beanLifecycleDemoBean=new BeanLifeCycleDemoBean();
         return beanLifecycleDemoBean;
 
+    }
+    @Bean
+    public BeanPostProcessorDemoBean beanPostProcessorDemoBean()
+    {
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean=new BeanPostProcessorDemoBean();
+        return beanPostProcessorDemoBean;
     }
 
 
