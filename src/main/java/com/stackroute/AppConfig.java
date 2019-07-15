@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.domain.Actor;
+import com.stackroute.domain.BeanLifeCycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +26,14 @@ public class AppConfig {
     @Bean
     public Actor actor2() {
         return new Actor("Utkarsh", "M", 25);
+    }
+
+    @Bean(initMethod = "customInit",destroyMethod = "customDestroy")
+    public BeanLifeCycleDemoBean beanLifeCycleDemoBean()
+    {
+        BeanLifeCycleDemoBean beanLifecycleDemoBean=new BeanLifeCycleDemoBean();
+        return beanLifecycleDemoBean;
+
     }
 
 
