@@ -4,32 +4,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 public class Actor {
-    String name;
-    String gender;
-    int age;
 
-    @Autowired
-    public void setName(String name) {
+    private String name;
+    private String gender;
+    private int age;
+
+    public Actor() {
+
+    }
+
+    public Actor(String name, String gender, int age) {
         this.name = name;
-    }
-    @Autowired
-    public void setGender(String gender) {
         this.gender = gender;
-    }
-    @Autowired
-    public void setAge(int age) {
         this.age = age;
     }
+    
 
-    @Override
-    public String   toString() {
-        return "Actor{" +
-                "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                ", age=" + age +
-                '}';
+    public void printActor()
+    {
+        System.out.println("Actor's Name:"+name+"\n"+"Gender:"+gender+"\n"+"Age:"+age);
     }
+
 }

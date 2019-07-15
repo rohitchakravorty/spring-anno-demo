@@ -7,6 +7,10 @@ public class Movie {
     {
         this.actor = actor;
     }
+    public void printAboutMovieActor()
+    {
+        actor.printActor();
+    }
 
     @Override
     public String toString() {
