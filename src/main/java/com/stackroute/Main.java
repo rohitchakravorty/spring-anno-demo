@@ -13,7 +13,7 @@ public class Main  {
         Movie mv=context.getBean("movie", Movie.class);
         mv.printAboutMovieActor();
         Movie mv1=context.getBean("movie",Movie.class);
-       
+
     }
 
 }
